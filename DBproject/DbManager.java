@@ -24,8 +24,14 @@ public class DbManager implements DBHandler {
 				)
 		{
 			pstmt.setString(1, (String) datas.get("name"));
+			pstmt.setInt(2, (int) datas.get("age"));
+			pstmt.setInt(3, (int) datas.get("gender"));
+			pstmt.setInt(4, (int) datas.get("grade"));
+			pstmt.setInt(5, (int) datas.get("type"));
+			return pstmt.execute() ;
 		} catch (Exception e) {
 			e.printStackTrace();
+			return false;
 		}
 	}
 
